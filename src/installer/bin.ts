@@ -31,11 +31,7 @@ function getDirs(
 
   const absoluteGitCommonDir = path.resolve(cwd, gitCommonDir)
   // Prefix can be an empty string
-  let relativeUserPkgDir = prefix || '.'
-  // https://github.com/typicode/husky/issues/677
-  if (['1', 'true'].includes(process.env.HUSKY_RUN_FROM_ROOT || '')) {
-    relativeUserPkgDir = '.'
-  }
+  let relativeUserPkgDir = '.'
 
   return { relativeUserPkgDir, absoluteGitCommonDir }
 }
